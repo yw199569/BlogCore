@@ -20,15 +20,29 @@ namespace Blog.Core.Extensions.Middlewares
             // 也可以根据是否是本地做判断 IsLocalRequest
             if (context.Request.Path.Value.ToLower().Contains("index.html"))
             {
-                // 判断权限是否正确
-                if (IsAuthorized(context))
+
+                if (IsLocalRequest(context))
                 {
+                    
                     await next.Invoke(context);
                     return;
                 }
-
-                // 无权限，跳转swagger登录页
-                context.Response.Redirect("/swg-login.html");
+                else
+                {
+                    // 判断权限是否正确
+                    if (IsAuthorized(context))
+                    {
+                        await next.Invoke(context);
+                        return;
+                    }
+                    else
+                    {
+                        // 无权限，跳转swagger登录页
+                        context.Response.Redirect("/swg-login.html");
+                        //await next.Invoke(context);
+                        return;
+                    }
+                }                               
             }
             else
             {

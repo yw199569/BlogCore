@@ -23,6 +23,9 @@
   <PropertyGroup>
     <ServerGarbageCollection>false</ServerGarbageCollection>
   </PropertyGroup>
+	<PropertyGroup>
+		<UseAppHost>false</UseAppHost>
+	</PropertyGroup>
   <ItemGroup>
     <Compile Remove="Extensions\**" />
     <Compile Remove="Hubs\**" />

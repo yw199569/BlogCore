@@ -13,7 +13,7 @@ namespace Blog.Core.Api.Controllers
     /// </summary>
     [Produces("application/json")]
     [Route("api/[Controller]/[action]")]
-    [Authorize(Permissions.Name)]
+    [Authorize(Policy = "Admin")]
     public class NacosController : BaseApiController
     {
 

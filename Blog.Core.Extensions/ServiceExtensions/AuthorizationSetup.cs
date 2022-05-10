@@ -23,11 +23,11 @@ namespace Blog.Core.Extensions
 
             // 以下四种常见的授权方式。
 
-            // 1、这个很简单，其他什么都不用做， 只需要在API层的controller上边，增加特性即可
+            // 1、这个很简单，其他什么都不用做， 只需要在API层的controller上边，增加特性即可  简单身份认证
             // [Authorize(Roles = "Admin,System")]
 
 
-            // 2、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。
+            // 2、这个和上边的异曲同工，好处就是不用在controller中，写多个 roles 。 自定义角色认证
             // 然后这么写 [Authorize(Policy = "Admin")]
             services.AddAuthorization(options =>
             {
@@ -72,7 +72,7 @@ namespace Blog.Core.Extensions
             });
 
 
-            // 4、基于Scope策略授权
+            // 4、基于Scope策略授权 
             //services.AddAuthorization(options =>
             //{
             //    options.AddPolicy("Scope_BlogModule_Policy", builder =>

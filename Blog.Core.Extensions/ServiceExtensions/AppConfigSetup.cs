@@ -282,7 +282,7 @@ namespace Blog.Core.Extensions
                 #region 中间件
                 List<string[]> MiddlewareInfos = new()
                 {
-                    new string[] { "请求纪录中间件", Appsettings.app("Middleware", "RecordAccessLogs", "Enabled") },
+                    new string[] { "请求记录中间件", Appsettings.app("Middleware", "RecordAccessLogs", "Enabled") },
                     new string[] { "IP记录中间件", Appsettings.app("Middleware", "IPLog", "Enabled" ) },
                     new string[] { "请求响应日志中间件", Appsettings.app("Middleware", "RequestResponseLog", "Enabled" ) },
                     new string[] { "SingnalR实时发送请求数据中间件", Appsettings.app("Middleware", "SignalR", "Enabled" ) },

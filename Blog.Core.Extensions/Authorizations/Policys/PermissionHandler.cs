@@ -74,6 +74,7 @@ namespace Blog.Core.AuthHelper
                                 Role = item.Role?.Name.ObjToString(),
                             }).ToList();
                 }
+                
                 requirement.Permissions = list;
             }
 

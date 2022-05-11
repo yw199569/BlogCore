@@ -39,8 +39,8 @@ namespace Blog.Core.Extensions
                         Version = version,
                         Title = $"{ApiName} 接口文档——{RuntimeInformation.FrameworkDescription}",
                         Description = $"{ApiName} HTTP API " + version,
-                        Contact = new OpenApiContact { Name = ApiName, Email = "Blog.Core@xxx.com", Url = new Uri("https://neters.club") },
-                        License = new OpenApiLicense { Name = ApiName + " 官方文档", Url = new Uri("http://apk.neters.club/.doc/") }
+                        Contact = new OpenApiContact { Name = ApiName, Email = "", Url = new Uri("https://neters.club") },
+                        License = new OpenApiLicense { Name = ApiName + " 文档", Url = new Uri("http://apk.neters.club/.doc/") }
                     });
                     c.OrderActionsBy(o => o.RelativePath);
                 });

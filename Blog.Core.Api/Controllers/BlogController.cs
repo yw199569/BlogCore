@@ -270,7 +270,7 @@ namespace Blog.Core.Controllers
         [Route("ApacheTestUpdate")]
         public async Task<MessageModel<bool>> ApacheTestUpdate()
         {
-            return Success(await _blogArticleServices.Update(new { bsubmitter = $"laozhang{DateTime.Now.Millisecond}", bID = 1 }), "更新成功");
+            return Success(await _blogArticleServices.Update(new { bsubmitter = $"rey{DateTime.Now.Millisecond}", bID = 1 }), "更新成功");
         }
     }
 }

@@ -95,14 +95,14 @@ namespace Blog.Core.Extensions
                          var headStr = recevied.HttpContext.Request.Headers["Authorization"].ToString();
                          if (headStr.IsNotEmptyOrNull())
                          {
-                             if (!headStr.Contains("Bearer"))
+                             if (!headStr.Contains(JwtBearerDefaults.AuthenticationScheme))
                              {
-                                 string autoAuthHead = $"{"Bearer "}{headStr}";
+                                 string autoAuthHead = $"{JwtBearerDefaults.AuthenticationScheme }{headStr}";
                                  recevied.HttpContext.Request.Headers.Remove("Authorization");
                                  recevied.HttpContext.Request.Headers.Add("Authorization", autoAuthHead);
                              }
                          }
-                         return Task.CompletedTask;
+                         return Task.CompletedTask; 
                      }
                  };
              })

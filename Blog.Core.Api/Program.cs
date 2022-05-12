@@ -100,7 +100,6 @@ builder.Services.AddHttpPollySetup();
 builder.Services.AddControllers(o =>
 {
     o.Filters.Add(typeof(GlobalExceptionsFilter));
-    //o.Conventions.Insert(0, new GlobalRouteAuthorizeConvention());
     o.Conventions.Insert(0, new GlobalRoutePrefixFilter(new RouteAttribute(RoutePrefix.Name)));
 })
 .AddNewtonsoftJson(options =>

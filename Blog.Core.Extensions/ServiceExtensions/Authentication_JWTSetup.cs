@@ -90,6 +90,19 @@ namespace Blog.Core.Extensions
                              context.Response.Headers.Add("Token-Expired", "true");
                          }
                          return Task.CompletedTask;
+                     },
+                     OnMessageReceived = recevied => {//处理验证中不需要加Bearer
+                         var headStr = recevied.HttpContext.Request.Headers["Authorization"].ToString();
+                         if (headStr.IsNotEmptyOrNull())
+                         {
+                             if (!headStr.Contains("Bearer"))
+                             {
+                                 string autoAuthHead = $"{"Bearer "}{headStr}";
+                                 recevied.HttpContext.Request.Headers.Remove("Authorization");
+                                 recevied.HttpContext.Request.Headers.Add("Authorization", autoAuthHead);
+                             }
+                         }
+                         return Task.CompletedTask;
                      }
                  };
              })

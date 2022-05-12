@@ -4,7 +4,6 @@ using Blog.Core.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nacos.V2;
-using System.Threading.Tasks;
 
 namespace Blog.Core.Api.Controllers
 {
@@ -103,7 +102,7 @@ namespace Blog.Core.Api.Controllers
         /// 服务上线
         /// </summary>
         /// <returns></returns>
- 
+
         [HttpGet]
         public async Task<MessageModel<string>> Register()
         {

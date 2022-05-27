@@ -31,5 +31,5 @@ RUN dotnet publish "Blog.Core.Api.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-EXPOSE 9291 
+EXPOSE 8081 
 ENTRYPOINT ["dotnet", "Blog.Core.Api.dll"]

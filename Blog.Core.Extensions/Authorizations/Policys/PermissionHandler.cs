@@ -49,7 +49,7 @@ namespace Blog.Core.AuthHelper
             {
                 var data = await _roleModulePermissionServices.RoleModuleMaps();
                 var list = new List<PermissionItem>();
-                // ids4和jwt切换
+                // ids4和jwt切换 
                 // ids4
                 if (Permissions.IsUseIds4)
                 {
